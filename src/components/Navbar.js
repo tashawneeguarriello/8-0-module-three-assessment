@@ -15,10 +15,22 @@ class Navbar extends React.Component {
         </Link>
         <Link to="/movies">Movies</Link>
         <Link to="/people">People</Link>
-        <Link to="/locations">Location</Link>
+        <Link to="/locations">Locations</Link>
         <h1>Hello, world!</h1>
       </div>
     );
   }
 }
 export default Navbar;
+
+
+//import {Link} from "react-router-dom";
+
+//const Nav = () => {
+
+//return (
+  //<nav>
+  
+  //</nav>
+)
+}

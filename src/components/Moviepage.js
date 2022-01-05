@@ -26,22 +26,14 @@ class Moviepage extends React.Component {
   };
 
   handleDropdownChange = (event) => {
-    let currentMovieObject = this.state.movies.find((movie) => {
-      return movie.title === event.target.value;
-    });
-
     this.setState({
-      currentMovie: currentMovieObject,
+      currentMovie: event.target.value,
     });
   };
-  //   this.setState({
-  //     currentMovie: event.target.value,
-  //   });
-  // };
 
   render() {
     let dropDownOptions = this.state.movies.map((movie) => {
-      return <option>{movie.title}</option>;
+      return <option value={movie.title}>{movie.title}</option>;
     });
 
     let currentMovieObject = this.state.movies.find((movie) => {
@@ -57,11 +49,11 @@ class Moviepage extends React.Component {
           <option>Select a Film</option>
           {dropDownOptions}
         </select>
-        <h1>
-          {currentMovieObject ? currentMovieObject.title : null}{" "}
-          {currentMovieObject ? currentMovieObject.release_date : null}
-          {currentMovieObject?.description}
-        </h1>
+        <h1>{currentMovieObject?.title}</h1>
+
+        <p>{currentMovieObject?.release_date}</p>
+
+        <p>{currentMovieObject?.description}</p>
       </div>
     );
   }
